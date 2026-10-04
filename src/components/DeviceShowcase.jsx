@@ -44,8 +44,8 @@ export default function DeviceShowcase() {
       className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left Column Content */}
-        <div className="text-left">
+        {/* Left Column Content: Mobile-e center, Desktop-e (lg) left */}
+        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3 select-none">
             DIP INTO THE DETAILS
           </span>
@@ -62,15 +62,15 @@ export default function DeviceShowcase() {
             ></span>
           </div>
 
-          {/* Readable Paragraph */}
-          <p className="text-[#777777] text-[17px] sm:text-[18px] leading-[1.75] max-w-xl mb-10">
+          {/* Readable Paragraph: mx-auto diye mobile-e center align kora hoyeche */}
+          <p className="text-[#777777] text-[17px] sm:text-[18px] leading-[1.75] max-w-xl mx-auto lg:mx-0 mb-10">
             Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
             Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
             ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
           </p>
 
-          {/* Feature List with react-icons */}
-          <div className="flex flex-col space-y-5">
+          {/* Feature List: Mobile-e items-center/start adjust kora hoyeche */}
+          <div className="flex flex-col space-y-5 items-start">
             {detailPoints.map((item) => (
               <div
                 key={item.id}
