@@ -5,6 +5,7 @@ import DeviceShowcase from '@/components/DeviceShowcase';
 import Customization from '@/components/Customization';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
+import Pricing from '@/components/Pricing';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Customization />
       <Testimonials />
       <CallToAction />
+      <Pricing />
     </main>
   );
 }
