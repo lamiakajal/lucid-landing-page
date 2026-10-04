@@ -47,6 +47,7 @@ export default function Pricing() {
       className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        {/* Section Heading Area */}
         <div className="text-center mb-16 sm:mb-20">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3">
             QUALITY HAS ITS PRICE
@@ -64,6 +65,7 @@ export default function Pricing() {
           </div>
         </div>
 
+        {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {plans.map((plan) => {
             const isActive = activeCard === plan.id;
@@ -81,6 +83,7 @@ export default function Pricing() {
                 } hover:-translate-y-2 hover:shadow-2xl hover:border-[#008ed6]`}
               >
                 <div>
+                  {/* Plan Header */}
                   <div className="py-6 border-b border-gray-100 transition-colors">
                     <h3
                       className={`text-[17px] font-bold tracking-wider uppercase transition-colors duration-300 ${
@@ -91,6 +94,7 @@ export default function Pricing() {
                     </h3>
                   </div>
 
+                  {/* Price Display */}
                   <div className="relative py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/70 overflow-hidden">
                     <span
                       className={`absolute inset-0 bg-[#008ed6] transform origin-center transition-transform duration-500 ease-out pointer-events-none ${
@@ -104,9 +108,7 @@ export default function Pricing() {
                           isActive ? "text-white" : "text-[#1a1a1a]"
                         } group-hover:text-white`}
                       >
-                        <span className="text-2xl font-bold mt-1 mr-0.5">
-                          $
-                        </span>
+                        <span className="text-2xl font-bold mt-1 mr-0.5">$</span>
                         <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
                           {plan.price}
                         </span>
@@ -121,6 +123,7 @@ export default function Pricing() {
                     </div>
                   </div>
 
+                  {/* Plan Description */}
                   <div className="p-6 sm:p-7">
                     <p className="text-gray-500 text-[14px] leading-relaxed">
                       {plan.desc}
@@ -128,6 +131,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
+                {/* Order Button */}
                 <div className="p-6 pt-0">
                   <Link
                     href="#contact"
