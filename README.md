@@ -27,8 +27,8 @@
 
 ## 🔗 Live Demo
 
-- **Live Site (Vercel):** [lucid-landing-page.vercel.app](https://lucid-landing-page.vercel.app) _(Update with your deployed link)_
-- **GitHub Repository:** [github.com/lamiakajal/lucid-landing-page](https://github.com/lamiakajal/lucid-landing-page)
+- **Live Site (Vercel):** [lucid-lamiakajal.vercel.app](https://lucid-lamiakajal.vercel.app)
+- **GitHub Repository:** [github.com/lamiakajal/lucid-landing-page](https://https://github.com/lamiakajal/lucid-landing-page)
 
 ---
 
