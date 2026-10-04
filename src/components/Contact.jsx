@@ -30,6 +30,31 @@ export default function Contact() {
       onTouchStart={() => setIsHovered(true)}
       className="relative bg-[#f4f5f7] pt-24 sm:pt-28 select-none"
     >
+      {/* 60fps Ultra Smooth Hardware Accelerated Floating Animation */}
+      <style jsx global>{`
+        @keyframes ultraSmoothFloat {
+          0% {
+            transform: translate3d(0, 0px, 0);
+          }
+          50% {
+            transform: translate3d(0, -16px, 0);
+          }
+          100% {
+            transform: translate3d(0, 0px, 0);
+          }
+        }
+        .animate-floating {
+          animation: ultraSmoothFloat 6s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+            infinite;
+          will-change: transform;
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+        .animate-floating:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-20">
         {/* Section Heading Area */}
         <div className="text-center mb-16 sm:mb-20">
@@ -51,7 +76,6 @@ export default function Contact() {
 
         {/* 3 Contact Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto mb-16 sm:mb-24">
-          {/* Phone */}
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaMobileAlt />
@@ -64,7 +88,6 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Location */}
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaMapMarkerAlt />
@@ -80,7 +103,6 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Email */}
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaEnvelope />
@@ -91,12 +113,11 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Floating Animated Contact Form (ম্যাপের ওপর ভেসে থাকবে) */}
-        <div className="relative z-30 max-w-3xl mx-auto -mb-36 sm:-mb-44">
-          <div className="bg-[#15171e] text-white p-6 sm:p-10 md:p-12 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.55)] border border-white/5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_28px_60px_rgba(0,0,0,0.7)]">
+        {/* Ultra-Smooth Floating Form */}
+        <div className="relative z-30 max-w-3xl mx-auto -mb-36 sm:-mb-44 animate-floating">
+          <div className="bg-[#15171e] text-white p-6 sm:p-10 md:p-12 rounded-sm border border-white/10 shadow-2xl transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Left Column Inputs */}
                 <div className="space-y-4">
                   <input
                     type="text"
@@ -127,7 +148,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Right Column Message Field */}
                 <div className="h-full">
                   <textarea
                     name="message"
@@ -141,7 +161,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Submit Button with Center-Outward Expand Hover Effect */}
               <div className="pt-2 flex justify-end">
                 <button
                   type="submit"
@@ -156,7 +175,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Satellite Map Component */}
+      {/* Satellite Map Area */}
       <div className="w-full h-115 sm:h-125 relative z-10 pt-20">
         <iframe
           title="Google Map Satellite"
