@@ -103,10 +103,11 @@ export default function Features() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
-      className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 transition-colors"
+      /* border-b border-[#d1d5db] diye dag ta aro deep/clear kora hoyeche */
+      className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        {/* Section Heading Area: mb-20 sm:mb-24 lg:mb-28 diye boro gap toiri kora holo */}
+        {/* Section Heading Area */}
         <div className="text-center mb-20 sm:mb-24 lg:mb-28">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3 select-none">
             PRODUCT OVERVIEW
