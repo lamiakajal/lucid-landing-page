@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import DeviceShowcase from '@/components/DeviceShowcase';
 import Customization from '@/components/Customization';
+import Testimonials from '@/components/Testimonials';
+import CallToAction from '@/components/CallToAction';
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Features />
       <DeviceShowcase />
       <Customization />
+      <Testimonials />
+      <CallToAction />
     </main>
   );
 }
