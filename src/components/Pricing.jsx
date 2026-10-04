@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Pricing() {
   const [isHovered, setIsHovered] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
 
   const plans = [
     {
@@ -46,7 +47,6 @@ export default function Pricing() {
       className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        {/* Section Heading */}
         <div className="text-center mb-16 sm:mb-20">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3">
             QUALITY HAS ITS PRICE
@@ -64,64 +64,93 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {plans.map((plan) => (
-            <div
-              key={plan.id}
-              className="group flex flex-col justify-between bg-white border border-gray-200 rounded-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:border-[#008ed6]"
-            >
-              <div>
-                {/* Plan Header */}
-                <div className="py-6 border-b border-gray-100 transition-colors">
-                  <h3 className="text-[17px] font-bold tracking-wider text-[#1a1a1a] uppercase group-hover:text-[#008ed6] transition-colors duration-300">
-                    {plan.name}
-                  </h3>
-                </div>
+          {plans.map((plan) => {
+            const isActive = activeCard === plan.id;
 
-                {/* Price Display: Majhkhan theke duipashe blue expand hobe */}
-                <div className="relative py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/70 overflow-hidden">
-                  {/* Center-outward blue expanding background */}
-                  <span className="absolute inset-0 bg-[#008ed6] transform scale-x-0 origin-center transition-transform duration-500 ease-out group-hover:scale-x-100 pointer-events-none"></span>
+            return (
+              <div
+                key={plan.id}
+                onTouchStart={() => setActiveCard(plan.id)}
+                onMouseEnter={() => setActiveCard(plan.id)}
+                onMouseLeave={() => setActiveCard(null)}
+                className={`group flex flex-col justify-between bg-white border rounded-sm text-center transition-all duration-300 ease-in-out ${
+                  isActive
+                    ? "-translate-y-2 shadow-2xl border-[#008ed6]"
+                    : "border-gray-200"
+                } hover:-translate-y-2 hover:shadow-2xl hover:border-[#008ed6]`}
+              >
+                <div>
+                  <div className="py-6 border-b border-gray-100 transition-colors">
+                    <h3
+                      className={`text-[17px] font-bold tracking-wider uppercase transition-colors duration-300 ${
+                        isActive ? "text-[#008ed6]" : "text-[#1a1a1a]"
+                      } group-hover:text-[#008ed6]`}
+                    >
+                      {plan.name}
+                    </h3>
+                  </div>
 
-                  <div className="relative z-10">
-                    <div className="flex justify-center items-start text-[#1a1a1a] transition-colors duration-300 group-hover:text-white">
-                      <span className="text-2xl font-bold mt-1 mr-0.5">$</span>
-                      <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
-                        {plan.price}
-                      </span>
+                  <div className="relative py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/70 overflow-hidden">
+                    <span
+                      className={`absolute inset-0 bg-[#008ed6] transform origin-center transition-transform duration-500 ease-out pointer-events-none ${
+                        isActive ? "scale-x-100" : "scale-x-0"
+                      } group-hover:scale-x-100`}
+                    ></span>
+
+                    <div className="relative z-10">
+                      <div
+                        className={`flex justify-center items-start transition-colors duration-300 ${
+                          isActive ? "text-white" : "text-[#1a1a1a]"
+                        } group-hover:text-white`}
+                      >
+                        <span className="text-2xl font-bold mt-1 mr-0.5">
+                          $
+                        </span>
+                        <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
+                          {plan.price}
+                        </span>
+                      </div>
+                      <p
+                        className={`text-[13px] mt-2 font-normal transition-colors duration-300 ${
+                          isActive ? "text-white/90" : "text-gray-400"
+                        } group-hover:text-white/90`}
+                      >
+                        {plan.period}
+                      </p>
                     </div>
-                    <p className="text-gray-400 text-[13px] mt-2 font-normal transition-colors duration-300 group-hover:text-white/90">
-                      {plan.period}
+                  </div>
+
+                  <div className="p-6 sm:p-7">
+                    <p className="text-gray-500 text-[14px] leading-relaxed">
+                      {plan.desc}
                     </p>
                   </div>
                 </div>
 
-                {/* Plan Description */}
-                <div className="p-6 sm:p-7">
-                  <p className="text-gray-500 text-[14px] leading-relaxed">
-                    {plan.desc}
-                  </p>
+                <div className="p-6 pt-0">
+                  <Link
+                    href="#contact"
+                    className="relative group/btn overflow-hidden block w-full py-2.5 px-4 text-[13px] font-bold text-[#008ed6] uppercase tracking-wider border border-[#008ed6] rounded-xs transition-colors duration-300"
+                  >
+                    <span
+                      className={`absolute inset-0 bg-[#008ed6] transform origin-center transition-transform duration-300 ease-out pointer-events-none ${
+                        isActive ? "scale-x-100" : "scale-x-0"
+                      } group-hover/btn:scale-x-100`}
+                    ></span>
+
+                    <span
+                      className={`relative z-10 transition-colors duration-300 ${
+                        isActive ? "text-white" : "text-[#008ed6]"
+                      } group-hover/btn:text-white`}
+                    >
+                      ORDER NOW
+                    </span>
+                  </Link>
                 </div>
               </div>
-
-              {/* Order Button: Button-er moddheo majhkhan theke duipashe expand animation */}
-              <div className="p-6 pt-0">
-                <Link
-                  href="#contact"
-                  className="relative group/btn overflow-hidden block w-full py-2.5 px-4 text-[13px] font-bold text-[#008ed6] uppercase tracking-wider border border-[#008ed6] rounded-xs transition-colors duration-300"
-                >
-                  {/* Center-outward expanding fill layer */}
-                  <span className="absolute inset-0 bg-[#008ed6] transform scale-x-0 origin-center transition-transform duration-300 ease-out group-hover/btn:scale-x-100 pointer-events-none"></span>
-
-                  {/* Button Label */}
-                  <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-white">
-                    ORDER NOW
-                  </span>
-                </Link>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
