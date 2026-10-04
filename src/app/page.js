@@ -6,6 +6,7 @@ import Customization from '@/components/Customization';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Pricing from '@/components/Pricing';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Pricing />
+      <Contact />
     </main>
   );
 }
