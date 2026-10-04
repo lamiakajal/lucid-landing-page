@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Pricing() {
   const [isHovered, setIsHovered] = useState(false);
-  const [activeCard, setActiveCard] = useState(null); // Mobile/touch active state
+  const [activeCard, setActiveCard] = useState(null);
 
   const plans = [
     {
@@ -96,7 +96,6 @@ export default function Pricing() {
 
                   {/* Price Display */}
                   <div className="relative py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/70 overflow-hidden">
-                    {/* Expanding Background Layer */}
                     <span
                       className={`absolute inset-0 bg-[#008ed6] transform origin-center transition-transform duration-500 ease-out pointer-events-none ${
                         isActive ? "scale-x-100" : "scale-x-0"
@@ -109,9 +108,7 @@ export default function Pricing() {
                           isActive ? "text-white" : "text-[#1a1a1a]"
                         } group-hover:text-white`}
                       >
-                        <span className="text-2xl font-bold mt-1 mr-0.5">
-                          $
-                        </span>
+                        <span className="text-2xl font-bold mt-1 mr-0.5">$</span>
                         <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
                           {plan.price}
                         </span>
