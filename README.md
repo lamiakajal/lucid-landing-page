@@ -23,14 +23,16 @@
 - **Cross-Platform Micro-Interactions:** Custom center-outward expand animations optimized for both desktop cursor hovers and mobile touch triggers.
 - **Modular App Router Architecture:** Fully decoupled, reusable React components ensuring scalable code maintenance and rapid page delivery.
 
-## Live Demo
+---
 
-- **Live Site (Vercel):** [lucid-landing-page.vercel.app](https://lucid-landing-page.vercel.app) _(Replace with your deployed URL)_
+## 🔗 Live Demo
+
+- **Live Site (Vercel):** [lucid-landing-page.vercel.app](https://lucid-landing-page.vercel.app) _(Update with your deployed link)_
 - **GitHub Repository:** [github.com/lamiakajal/lucid-landing-page](https://github.com/lamiakajal/lucid-landing-page)
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Framework:** Next.js (App Router)
 - **Library:** React
@@ -40,7 +42,7 @@
 
 ---
 
-## Key Features
+## ✨ Key Features
 
 1. **Hardware-Accelerated Floating Form:** A sleek floating dark contact card rendered over an interactive Google satellite map using GPU-accelerated CSS `translate3d` keyframe animations. It automatically pauses on user interaction for effortless form entry.
 2. **Center-Outward Expand Hover & Touch Effects:** Custom interactive animations across CTA buttons, navigation, and subscription cards with dual mouse-hover and mobile touch support.
@@ -49,44 +51,28 @@
 
 ---
 
-## Next.js & React Concepts & Questions
+## 📂 Project Architecture
 
-### 1. What is the Next.js App Router, and how does it organize pages?
-
-Next.js App Router (introduced in version 13) uses a file-system based routing mechanism located inside the `src/app` directory. Instead of creating individual routes using custom files, folders define URL segments, and special files like `page.js` render the unique UI for each route, while `layout.js` handles persistent shared wrappers (such as headers or theme backgrounds).
-
-### 2. What is the difference between Server Components and Client Components in Next.js?
-
-- **Server Components (Default):** Rendered exclusively on the server without sending JavaScript bundles to the browser. They allow direct backend data fetching and enhance performance and SEO.
-- **Client Components:** Opted in by placing the `"use client"` directive at the very top of the file. They are required whenever browser APIs, interactive event listeners (`onClick`, `onMouseEnter`), or React state hooks (`useState`, `useEffect`) are used.
-
-### 3. Why did we need the `"use client"` directive in components like `Contact.jsx` and `Pricing.jsx`?
-
-Components like `Pricing.jsx` and `Contact.jsx` rely on active user interactions:
-
-- Handling controlled form state (`useState` for name, email, subject, and message)
-- Managing dynamic hover and touch feedback (`useState` for tracking active pricing cards and title underline transitions)
-- Listening to browser events (`onSubmit`, `onTouchStart`, `onMouseEnter`, `onMouseLeave`)
-
-Because Server Components cannot execute browser event listeners or maintain client-side hook state, `"use client"` must be declared.
-
-### 4. How does CSS hardware acceleration (`translate3d`) make floating animations smoother?
-
-Traditional animations that change properties like `top`, `bottom`, `margin`, or dynamic `box-shadow` trigger expensive layout recalculations (reflow) and repainting on the CPU, which often causes stuttering or frame drops. By using `transform: translate3d(0, -16px, 0)` along with `will-change: transform`, the browser offloads rendering calculations directly to the GPU, yielding a smooth 60fps/120fps floating experience.
-
-### 5. What are the benefits of using Tailwind CSS arbitrary variants and utility classes in Next.js?
-
-Tailwind CSS compiles utilities into minimal production CSS by scanning class names during build time. Its utility-first model eliminates unused styles, while canonical scale classes (e.g., `min-h-35` instead of `min-h-[140px]`) standardize sizing and maintain clean, warning-free code throughout development.
-
----
-
----
-
-## Getting Started Locally
-
-### 1. Clone the repository
-
-```bash
-git clone [https://github.com/lamiakajal/lucid-landing-page.git](https://github.com/lamiakajal/lucid-landing-page.git)
-cd lucid-landing-page
+```text
+lucid-landing-page/
+├── public/                 # Static visual assets & illustrations
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico     # Browser favicon
+│   │   ├── globals.css     # Global styles & Tailwind layers
+│   │   ├── layout.js       # Root application layout
+│   │   └── page.js         # Landing page assembly
+│   └── components/
+│       ├── Navbar.jsx          # Sticky navigation bar
+│       ├── Hero.jsx            # Impactful hero showcase
+│       ├── Features.jsx        # Product capability grid
+│       ├── DeviceShowcase.jsx  # Multi-platform preview section
+│       ├── Customization.jsx   # Feature breakdown showcase
+│       ├── Testimonials.jsx    # Verified customer social proof
+│       ├── CallToAction.jsx    # High-converting lead-in CTA
+│       ├── Pricing.jsx         # Tiered subscription plans
+│       ├── Contact.jsx         # Levitating form & embedded satellite map
+│       └── Footer.jsx          # Social connections & branding footer
+├── package.json
+└── README.md
 ```
