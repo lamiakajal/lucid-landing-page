@@ -46,7 +46,7 @@ export default function Pricing() {
       className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        {/* Section Heading Area */}
+        {/* Section Heading */}
         <div className="text-center mb-16 sm:mb-20">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3">
             QUALITY HAS ITS PRICE
@@ -69,27 +69,32 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="group flex flex-col justify-between bg-white border border-gray-200 rounded-md text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-[#008ed6]"
+              className="group flex flex-col justify-between bg-white border border-gray-200 rounded-sm text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:border-[#008ed6]"
             >
               <div>
                 {/* Plan Header */}
-                <div className="py-6 border-b border-gray-100 group-hover:bg-[#fbfdff] transition-colors rounded-t-md">
-                  <h3 className="text-[17px] font-bold tracking-wider text-[#1a1a1a] uppercase group-hover:text-[#008ed6] transition-colors">
+                <div className="py-6 border-b border-gray-100 transition-colors">
+                  <h3 className="text-[17px] font-bold tracking-wider text-[#1a1a1a] uppercase group-hover:text-[#008ed6] transition-colors duration-300">
                     {plan.name}
                   </h3>
                 </div>
 
-                {/* Price Display */}
-                <div className="py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/50 group-hover:bg-white transition-colors">
-                  <div className="flex justify-center items-start text-[#1a1a1a]">
-                    <span className="text-2xl font-bold mt-1 mr-0.5">$</span>
-                    <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
-                      {plan.price}
-                    </span>
+                {/* Price Display: Majhkhan theke duipashe blue expand hobe */}
+                <div className="relative py-8 sm:py-10 border-b border-gray-100 bg-[#fafafa]/70 overflow-hidden">
+                  {/* Center-outward blue expanding background */}
+                  <span className="absolute inset-0 bg-[#008ed6] transform scale-x-0 origin-center transition-transform duration-500 ease-out group-hover:scale-x-100 pointer-events-none"></span>
+
+                  <div className="relative z-10">
+                    <div className="flex justify-center items-start text-[#1a1a1a] transition-colors duration-300 group-hover:text-white">
+                      <span className="text-2xl font-bold mt-1 mr-0.5">$</span>
+                      <span className="text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        {plan.price}
+                      </span>
+                    </div>
+                    <p className="text-gray-400 text-[13px] mt-2 font-normal transition-colors duration-300 group-hover:text-white/90">
+                      {plan.period}
+                    </p>
                   </div>
-                  <p className="text-gray-400 text-[13px] mt-2 font-normal">
-                    {plan.period}
-                  </p>
                 </div>
 
                 {/* Plan Description */}
@@ -100,13 +105,19 @@ export default function Pricing() {
                 </div>
               </div>
 
-              {/* Action Button */}
+              {/* Order Button: Button-er moddheo majhkhan theke duipashe expand animation */}
               <div className="p-6 pt-0">
                 <Link
                   href="#contact"
-                  className="block w-full py-2.5 px-4 text-[13px] font-bold text-[#008ed6] uppercase tracking-wider border border-[#008ed6] rounded transition-all duration-300 group-hover:bg-[#008ed6] group-hover:text-white group-hover:shadow-md"
+                  className="relative group/btn overflow-hidden block w-full py-2.5 px-4 text-[13px] font-bold text-[#008ed6] uppercase tracking-wider border border-[#008ed6] rounded-xs transition-colors duration-300"
                 >
-                  ORDER NOW
+                  {/* Center-outward expanding fill layer */}
+                  <span className="absolute inset-0 bg-[#008ed6] transform scale-x-0 origin-center transition-transform duration-300 ease-out group-hover/btn:scale-x-100 pointer-events-none"></span>
+
+                  {/* Button Label */}
+                  <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-white">
+                    ORDER NOW
+                  </span>
                 </Link>
               </div>
             </div>
