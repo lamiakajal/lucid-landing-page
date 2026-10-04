@@ -19,7 +19,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -32,15 +32,15 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
         scrolled
-          ? "bg-[#15171e]/90 backdrop-blur-md shadow-lg shadow-black/20 py-4"
-          : "bg-transparent py-7"
+          ? "bg-[#15171e]/95 backdrop-blur-md shadow-md py-4"
+          : "bg-transparent py-8"
       }`}
     >
-      <div className="w-full max-w-350 mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
-        {/* Brand Image Logo */}
-        <Link href="#home" className="flex items-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="#home" className="inline-flex items-center shrink-0">
           <Image
             src="/assets/logo.png"
             alt="Lucid Logo"
@@ -52,15 +52,16 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+        <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="relative text-[13px] xl:text-[14px] font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors py-1 group"
+              className="relative text-[14px] font-semibold text-white uppercase tracking-wider py-1 group focus:outline-none"
             >
               {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#008ed6] transition-all duration-300 group-hover:w-full"></span>
+              {/* Touch, click or hover all trigger the expand */}
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#008ed6] transition-all duration-600 ease-in-out group-hover:w-full group-focus:w-full group-active:w-full"></span>
             </Link>
           ))}
         </nav>
@@ -69,10 +70,10 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation"
-          className="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none"
+          className="lg:hidden text-white p-2 rounded hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none"
         >
           <svg
-            className="w-6 h-6 sm:w-7 sm:h-7 transition-transform duration-200"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -104,15 +105,18 @@ export default function Navbar() {
             : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="flex flex-col space-y-3 px-6 sm:px-8">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col space-y-3">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-[#008ed6] transition-colors py-2 border-b border-gray-800/60 last:border-none"
+              className="relative text-sm font-semibold text-gray-200 uppercase tracking-wider py-2 border-b border-gray-800/60 last:border-none group focus:outline-none"
             >
-              {item.name}
+              <span className="relative z-10 transition-colors duration-200 group-hover:text-white group-active:text-[#008ed6]">
+                {item.name}
+              </span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#008ed6] transition-all duration-500 ease-in-out group-hover:w-full group-active:w-full"></span>
             </Link>
           ))}
         </div>
