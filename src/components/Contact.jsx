@@ -30,7 +30,6 @@ export default function Contact() {
       onTouchStart={() => setIsHovered(true)}
       className="relative bg-[#f4f5f7] pt-24 sm:pt-28 select-none"
     >
-      {/* 60fps Ultra Smooth Hardware Accelerated Floating Animation */}
       <style jsx global>{`
         @keyframes ultraSmoothFloat {
           0% {
@@ -44,8 +43,7 @@ export default function Contact() {
           }
         }
         .animate-floating {
-          animation: ultraSmoothFloat 6s cubic-bezier(0.45, 0.05, 0.55, 0.95)
-            infinite;
+          animation: ultraSmoothFloat 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
           will-change: transform;
           backface-visibility: hidden;
           perspective: 1000px;
@@ -56,7 +54,6 @@ export default function Contact() {
       `}</style>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-20">
-        {/* Section Heading Area */}
         <div className="text-center mb-16 sm:mb-20">
           <span className="text-[#008ed6] text-[13px] font-bold uppercase tracking-wider block mb-3">
             STAY IN TOUCH
@@ -74,46 +71,32 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* 3 Contact Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto mb-16 sm:mb-24">
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaMobileAlt />
             </div>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              Phone: (415) 124-5678
-            </p>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              Fax: (412) 123-8290
-            </p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">Phone: (415) 124-5678</p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">Fax: (412) 123-8290</p>
           </div>
 
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaMapMarkerAlt />
             </div>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              1001 Brickell Bay Dr.
-            </p>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              Suite 1900
-            </p>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              Miami, FL 33131
-            </p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">1001 Brickell Bay Dr.</p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">Suite 1900</p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">Miami, FL 33131</p>
           </div>
 
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-12 h-12 flex items-center justify-center text-[#008ed6] text-2xl mb-3 transition-transform duration-300 group-hover:-translate-y-1.5">
               <FaEnvelope />
             </div>
-            <p className="text-[#777777] text-[14px] leading-relaxed">
-              support@yourname.com
-            </p>
+            <p className="text-[#777777] text-[14px] leading-relaxed">support@yourname.com</p>
           </div>
         </div>
 
-        {/* Ultra-Smooth Floating Form */}
         <div className="relative z-30 max-w-3xl mx-auto -mb-36 sm:-mb-44 animate-floating">
           <div className="bg-[#15171e] text-white p-6 sm:p-10 md:p-12 rounded-sm border border-white/10 shadow-2xl transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -175,7 +158,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Satellite Map Area */}
       <div className="w-full h-115 sm:h-125 relative z-10 pt-20">
         <iframe
           title="Google Map Satellite"
