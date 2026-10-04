@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap");
+@import "tailwindcss";
 
 :root {
   --color-primary: #008ed6;
@@ -26,6 +26,6 @@ body {
 
 p {
   color: var(--color-paragraph);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 }
