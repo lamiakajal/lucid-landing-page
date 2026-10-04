@@ -1,26 +1,31 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #008ed6;
+  --color-primary-hover: #0077b5;
+  --color-heading: #1a1a1a;
+  --color-subheading: #26292e;
+  --color-paragraph: #999999;
+  --color-body-bg: #ffffff;
+  --color-section-dark: #15171e;
+  --color-card-border: #e8e8e8;
+  --color-divider: #ededed;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--color-heading);
+  background-color: var(--color-body-bg);
+  line-height: 1.6;
+}
+
+p {
+  color: var(--color-paragraph);
+  font-size: 16px;
+  line-height: 1.65;
 }
