@@ -103,7 +103,6 @@ export default function Features() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
-      /* border-b border-[#d1d5db] diye dag ta aro deep/clear kora hoyeche */
       className="py-24 sm:py-28 lg:py-32 bg-white scroll-mt-20 border-b border-[#d1d5db] transition-colors"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">

@@ -29,7 +29,7 @@ export default function Hero() {
             lacus sed dolor placerat tempus. Morbi sed hendrerit arcu.
           </p>
 
-          {/* Action Buttons: mt-10 sm:mt-12 diye ektu niche namano holo */}
+          {/* Action Buttons: mt-10 sm:mt-12 down */}
           <div className="mt-10 sm:mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
             {/* DOWNLOAD NOW */}
             <button className="relative group overflow-hidden bg-transparent border border-white text-white text-[13px] font-bold px-7 py-3 rounded-[3px] uppercase tracking-wider hover:border-[#008ed6] active:border-[#008ed6] focus:border-[#008ed6] transition-colors duration-600 ease-in-out focus:outline-none select-none">

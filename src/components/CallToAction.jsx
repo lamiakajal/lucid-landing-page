@@ -3,7 +3,6 @@ import Link from "next/link";
 export default function CallToAction() {
   return (
     <section className="bg-black py-10 sm:py-12 border-t border-white/10 w-full">
-      {/* বাকি সব সেকশনের মত হুবহু সেইম কন্টেইনার মার্জিন ও প্যাডিং */}
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Left Heading */}

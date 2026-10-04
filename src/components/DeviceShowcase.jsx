@@ -62,14 +62,14 @@ export default function DeviceShowcase() {
             ></span>
           </div>
 
-          {/* Readable Paragraph: mx-auto diye mobile-e center align kora hoyeche */}
+          {/* Readable Paragraph: mx-auto diye mobile-e center align */}
           <p className="text-[#777777] text-[17px] sm:text-[18px] leading-[1.75] max-w-xl mx-auto lg:mx-0 mb-10">
             Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
             Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
             ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
           </p>
 
-          {/* Feature List: Mobile-e items-center/start adjust kora hoyeche */}
+          {/* Feature List: Mobile-e items-center/start adjust */}
           <div className="flex flex-col space-y-5 items-start">
             {detailPoints.map((item) => (
               <div
